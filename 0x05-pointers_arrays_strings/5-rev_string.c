@@ -22,3 +22,4 @@ s[i] = s[counter];
 s[counter] = rev;
 }
 }
+
