@@ -18,5 +18,12 @@ int puts(const char *s);
 
 int putchar(int _c);
 
+/**
+ * _putchar - for printing string
+ * @c: receipient of the int type
+ * Return: give 0 always (success)
+ */
+
+int fputs(const char *str , FILE *stream);
 
 #endif
