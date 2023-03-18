@@ -723,12 +723,18 @@ extern int __overflow (FILE *, int);
 # 873 "/usr/include/stdio.h" 3 4
 
 # 2 "main.c" 2
-# 10 "main.c"
 
-# 10 "main.c"
+
+
+
+
+
+
+
+# 9 "main.c"
 int main(void)
 {
-printf("hello to the world\n");
 
 return (0);
+
 }
