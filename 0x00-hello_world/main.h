@@ -3,11 +3,11 @@
 
 /**
  * puts - for printing string
- * @str: receipient of the string
+ * @*s: receipient of the string
  * Return: give 0 always (success)
  */
 
-int puts(const char *str);
+int puts(const char *s);
 
 
 /**
