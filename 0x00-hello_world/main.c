@@ -8,7 +8,8 @@
 
 int main(void)
 {
-
+char my_str[] = "hello world";
+puts(my_str);
 return (0);
 
 }
