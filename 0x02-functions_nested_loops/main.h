@@ -87,7 +87,7 @@ int _abs(int i);
  *   nothing because the return type is void
  */
 
-int print_last_digit(int);
+int print_last_digit(int n);
 void jack_bauer(void);
 void times_table(void);
 int add(int, int);
