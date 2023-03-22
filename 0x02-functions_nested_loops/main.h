@@ -69,7 +69,7 @@ int print_sign(int n);
  *   nothing because the return type is void
  */
 
-int _abs(int);
+int _abs(int i);
 
 /**
  * _abs - prints alphabet in lower case
