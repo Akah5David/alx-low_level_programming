@@ -9,8 +9,13 @@ int ten;
 char la;
 for (ten = 0; ten <= 9; ten++)
 {
-for (la = 'a'; la <= 'z'; la++)
+la = 'a';
+
+while (la <= 'z')
+{
 _putchar(la);
+la++;
+}
 _putchar('\n');
 }
 }
