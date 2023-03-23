@@ -8,28 +8,41 @@
 
 void times_table(void)
 {
-int i;
-int j;
-int k;
+int x, y, z, u, d;
+for (x = 0; x <= 9; x++)
+{
+for (y = 0; y <= 9; y++)
+{
+z = x * y;
 
-for (i = 0; i <= 9; i++)
+if (z > 9)
 {
-j = 0;
-while (j <= 9)
+u = z % 10;
+d = (z -u) / 10;
+
+_putchar(44);
+_putchar(32);
+_putchar(d + '0');
+_putchar(u + '0');
+
+}
+
+else
 {
-if (j == 0)
+if (y != 0)
 {
-j++;
-k = i * j;
-printf("%2d", k);
+_putchar(44);
+_putchar(32);
+_putchar(32);
 }
-else if (j >= 1)
-{
-k = i * j;
-printf(",%3d", k);
-}
-j++;
-}
-printf("\n");
+
+_putchar(z + '0');
 }
 }
+_putchar('\n');
+
+}
+}
+
+
+	
