@@ -16,21 +16,7 @@
 int main(int argc, char *argv[])
 {
 printf("%d\n", argc);
-
-for (i = 0; i < argc; i++)
-{
-if(i <0)
-printf("%s\n", argv[i]);
-}
-else if (i > 0)
-{
-
-printf("%s\n", argv[i]);
-}
-else
-{
-break;
-}
+(void)argv;
 return (0);
 }
 
