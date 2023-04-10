@@ -41,7 +41,7 @@ return (0);
 /*calculating the minimum number of coins needed*/
 
 num_coins = 0;
-num_coin_types = sizeof(coin_values) / sizeof(int);
+num_coin_types = 5;
 
 
 for (i = 0; i < num_coin_types; i++)
