@@ -15,7 +15,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *p;
 unsigned int lens1, lens2;
-(void)lens2;
 /*getting the length of s1 and s2*/
 lens1 = strlen(s1);
 lens2 = strlen(s2);
@@ -29,6 +28,17 @@ if (p == NULL)
 return (NULL);
 }
 
+if (s1 == NULL && s2 == NULL) /*treating NULL as empty string*/
+{
+s1 = "";
+s2 = "";
+}
+
+if (n >= lens2)
+{
+n = lens2;/*using entire length 0f s2 if n >= lens2*/
+}
+
 /*copying s1 into p*/
 strcpy(p, s1);
 
@@ -38,6 +48,7 @@ strncat(p, s2, n);
 /*adding null-terminator to the end of the string*/
 
 p[lens1 + n] = '\0';
+
 
 return (p);
 
