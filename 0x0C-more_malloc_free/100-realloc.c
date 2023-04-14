@@ -15,29 +15,27 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-int *new_ptr;
-if (new_size == 0)
+void *new_ptr;
+unsigned int copy_size;
+if (new_size == 0 && ptr != NULL)
 {
 free(ptr);
 return (NULL);
 }
-new_ptr = malloc(new_size);
-if (new_ptr == NULL)
-{
-return (NULL);
-}
+
 if (ptr == NULL)
 {
-return (new_ptr);
+return (malloc(new_size));
 }
-if (new_size <= old_size)
+
+if (new_size == old_size)
 {
-memcpy(new_ptr, ptr, new_size);
+return (ptr);
 }
-else
-{
-memcpy(new_ptr, ptr, old_size);
-}
+
+new_ptr = malloc(new_size);
+copy_size = (old_size < new_size) ? old_size : new_size;
+memcpy(new_ptr, ptr, copy_size);
 free(ptr);
 return (new_ptr);
 }
