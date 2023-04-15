@@ -10,9 +10,11 @@
 void _puts(char *s)
 {
 int i;
+i = 0;
 
-for (i = 0; s[i] != '\0'; i++)
-write(1, &s[i], 1);
-
-write(1, "\n", 1);
+while (s[i] != '\0')
+{
+_putchar(s[i]);
+i++;
+}
 }

@@ -10,6 +10,5 @@
 
 int _atoi(char *s)
 {
-int i = atoi(s);
-return (i);
+/*gfdf*/
 }

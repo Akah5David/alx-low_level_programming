@@ -11,5 +11,3 @@ int _isupper(int c)
 {
 /*implementation*/
 }
-                                                              
-     
