@@ -1,88 +1,113 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 #include <ctype.h>
+#define MSG_FOR_ERROR "Error"
 
 /**
- * mul - prints out mult to the calling function
- * main - prints the value of called function
- * @num1: takes first digit to be multiplied
- * @num2: takes second digit to be multiplied
- * @argc: array size
- * @argv: pointer array
+ * is_digit - functio checks if a string contains a non-digit charracter
+ * @c: string variable to house the string to be evaluated
  *
- * Return: returns the value of mult to the calling function
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-
-int mul(char *num1, char *num2);
-
-int main(int argc, char *argv[]) {
-if (argc != 3)
+int is_digit(char *c)
 {
-for (int i = 0; "Error\n"[i] != '\0'; i++)
+int i; 
+for (i = 0; c[i] < '0' || c[i] > '9'; i++)
 {
-_putchar("Error\n"[i]);
+return (0);
 }
-return 98;
+return (1);
 }
 
-for (int i = 1; i < argc; i++)
+/**
+ * _strlen - function returns the length of a string if
+ * the condition is satisfied
+ * @s: string variable that houses the string to evaluate
+ *
+ * Return: the length of the string is returned at the end
+ * of the program if all conditions are satisfied
+ */
+int _strlen(char *s)
 {
-for (int j = 0; argv[i][j] != '\0'; j++)
+int i;
+i = 0;
+while (s[i] != '\0')
 {
-if (argv[i][j] < '0' || argv[i][j] > '9')
-{
-for (int k = 0; "Error\n"[k] != '\0'; k++)
-{
-_putchar("Error\n"[k]);
+i++;
 }
-return 98;
-}
-}
+return (i);
 }
 
-int result = mul(argv[1], argv[2]);
-if (result == -1)
+/**
+ * errors - function handles errors for the main function
+ */
+void errors(void)
 {
-for (int i = 0; "Error\n"[i] != '\0'; i++)
-{
-_putchar("Error\n"[i]);
+printf("Error\n");
+exit(98);
 }
-return 98;
 
-    
-char buffer[20];
-int i = 0;
-while (result > 0)
+/**
+ * main - function multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: always 0 if successful and 1 if not successful
+ */
+int main(int argc, char *argv[])
 {
-buffer[i++] = '0' + result % 10;
-result /= 10;
+char *s1;
+char *s2;
+int len1;
+int len2;
+int len;
+int i;
+int transport;
+int digt1;
+int digt2;
+int *result;
+int b;
+b = 0;
+
+s1 = argv[1];
+s2 = argv[2];
+if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+{
+errors();
 }
-if (i == 0)
+len1 = _strlen(s1);
+len2 = _strlen(s2);
+len = len1 + len2 + 1;
+result = malloc(sizeof(int) * len);
+if (!result)
+return (1);
+for (i = 0; i <= len1 + len2; i++)
+result[i] = 0;
+for (len1 = len1 - 1; len1 >= 0; len1--)
 {
+digt1 = s1[len1] - '0';
+transport = 0;
+for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
+{
+digt2 = s2[len2] - '0';
+transport+= result[len1 + len2 + 1] + (digt1 * digt2);
+result[len1 + len2 + 1] = transport % 10;
+transport /= 10;
+}
+if (transport > 0)
+result[len1 + len2 + 1] += transport;
+}
+for (i = 0; i < len - 1; i++)
+{
+if (result[i])
+b = 1;
+if (b)
+_putchar(result[i] + '0');
+}
+if (!b)
 _putchar('0');
-}
-for (int j = i - 1; j >= 0; j--)
-{
-_putchar(buffer[j]);
-}
 _putchar('\n');
-
-return 0;
-}
-
-int mul(char *num1, char *num2)
-{
-int n1 = atoi(num1);
-int n2 = atoi(num2);
-if (n1 == 0 || n2 == 0)
-{
-return 0;
-}
-int result = n1 * n2;
-if (result < 0)
-{
-return -1;
-}
-return result;
+free(result);
+return (0);
 }
