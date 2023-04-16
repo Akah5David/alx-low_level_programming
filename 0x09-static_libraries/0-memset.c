@@ -5,7 +5,7 @@
  * _memset - prints in an interger c and returns an integer
  * @s: receives an integer value
  * @b: klfklfkj
- * @n
+ * @n: jkghjhjb
  * Return: returns zero if succesful
  */
 

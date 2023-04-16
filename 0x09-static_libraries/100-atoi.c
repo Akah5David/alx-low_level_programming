@@ -15,13 +15,13 @@ int result = 0;
 int sign = 1;
 int i = 0;
 
-// Handling leading whitespace
+/*Handling leading whitespace*/
 while (isspace(s[i]))
 {
 i++;
 }
 
-// Handling sign
+/*Handling sign*/
 if (s[i] == '-')
 {
 sign = -1;
@@ -31,12 +31,12 @@ else if (s[i] == '+')
 {
 i++;
 }
-// Converting digits to integer
+/*Converting digits to integer*/
 while (isdigit(s[i]))
 {
 result = result * 10 + (s[i] - '0');
 i++;
 }
 
-return sign * result;
+return (sign *result);
 }

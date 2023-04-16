@@ -26,10 +26,10 @@ break;
 }
 if (match == 0)
 {
-return len;
+return (len);
 }
 len++;
 s++;
 }
-return len;
+return (len);
 }
