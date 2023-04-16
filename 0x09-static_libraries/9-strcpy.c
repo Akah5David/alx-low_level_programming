@@ -11,5 +11,15 @@
 
 char *_strcpy(char *dest, char *src)
 {
-/*klghjklffjk*/
+char *new_dest = dest;
+while(*src != '\0')
+{
+*dest = *src;
+dest++;
+src++;
+}
+
+*dest = '\0';
+
+return (new_dest);
 }

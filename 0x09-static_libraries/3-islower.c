@@ -10,5 +10,9 @@
 
 int _islower(int c)
 {
-/*jkfjkjfdkljn*/
+if (c >= 'a' && c <= 'z')
+{
+return 1;
+}
+return 0;
 }

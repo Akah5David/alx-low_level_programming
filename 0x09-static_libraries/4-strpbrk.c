@@ -11,5 +11,16 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-/*kljfkldfjklhklgf*/
+s = "Hello, World!";
+accept = "aeiou";
+char *result = _strpbrk(s, accept);
+if (result != NULL)
+{
+printf("The first vowel in '%s' is at position %ld.\n", s, result - s);
+}
+else
+{
+printf("No vowel found in '%s'.\n", s);
+}
+return (result);
 }

@@ -10,5 +10,8 @@
 
 int _abs(int n)
 {
-/*jgffkljhjkgljhkljkgl*/
+if (n < 0)
+return (-n);
+else
+return (n);
 }

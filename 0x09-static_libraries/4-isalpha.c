@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <ctype.h>
 /**
  * _isalpha - prints in an interger c and returns an integer
  * @c: receives an integer value
@@ -10,5 +10,5 @@
 
 int _isalpha(int c)
 {
-/*ljkfjhfjk*/
+return (isupper(c) || islower(c));
 }
